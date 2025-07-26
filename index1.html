@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projelerim | Ziada</title>
+	<link rel="icon" type="image/png" href="profil-fotoğrafınız.png">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --text: #dfe6e9;
+            --card-bg: #1e272e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Header Stili */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+        
+        .profile-info h2 {
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+        
+        .profile-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .theme-toggle {
+            background: var(--card-bg);
+            border: none;
+            color: var(--text);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--primary);
+        }
+        
+        /* Ana Başlık */
+        .main-title {
+            text-align: center;
+            margin: 2rem 0 3rem;
+        }
+        
+        .main-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .main-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Proje Grid */
+       .projects-grid {
+    display: grid;
+    justify-content: center;  /* Ortala */
+	grid-template-columns: repeat(4, 1fr); /* 4 sütun */
+    gap: 2rem;
+    flex-wrap: wrap;          /* Küçük ekranda alta geçsin */
+}
+
+
+
+        
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            position: relative;
+			width: 290px;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .project-thumbnail {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-info p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+        
+        .project-link {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .project-link:hover {
+            background: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 5rem;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet için 2 sütun */
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Telefon için 1 sütun */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile">
+                <img src="profil-fotoğrafınız.png" alt="Profil Fotoğrafı" class="profile-img">
+                <div class="profile-info">
+                    <h2> Mohammed Ziada </h2>
+                    <p>Web Geliştirici | Tasarımcı | 3D Modelleme & Elektronik Proje Geliştirici </p>
+                </div>
+            </div>
+            <button class="theme-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                </svg>
+                 
+            </button>
+        </header>
+        
+        <section class="main-title">
+            <h1>Projelerim</h1>
+            <p>Yıllar içinde oluşturduğum ve geliştirdiğim projeleri keşfedin. Her biri farklı bir fikri ve ihtiyacı karşılamak üzere tasarlandı.</p>
+        </section>
+        
+        <div class="projects-grid">
+            <!-- Site 1 -->
+            <div class="project-card">
+                <img src="site1-thumbnail.png" alt="Site 1 Thumbnail" class="project-thumbnail">
+                <div class="project-info">
+                    <h3>Karne Hesaplama Sistemi</h3>
+                    <p>Salim Yılmaz Anadolu Lisesi derslerine özel geliştirilmiş bir karne ortalama hesaplama aracı. Öğrenciler dönem sonu notlarını girerek ortalama puanlarını anında öğrenebilir, takdir-teşekkür durumunu görebilir ve karne gününe kalan süreyi takip edebilir
+					
+					</p>
+                    <a href="https://syalorthesaplama.github.io/SYAL-ORT-HESAPLAMA/" target="_blank" class="project-link">Siteyi Ziyaret Et</a>
+                </div>
+            </div>
+            
+            <!-- Site 2 -->
+            <div class="project-card">
+                <img src="site2-thumbnail.png" alt="Site 2 Thumbnail" class="project-thumbnail">
+                <div class="project-info">
+                    <h3>ZiyadeNet</h3>
+                    <p>YKS 2026 hazırlığı için tasarlanmış kapsamlı bir platform. Pomodoro tekniğiyle çalışma, yapılacaklar listesi, kişisel takvim, istatistik takibi ve önerilen öğretmenler gibi özelliklerle öğrencilerin sınav sürecini verimli yönetmelerine yardımcı olur.</p><p></p>
+                    <a href="https://ziyadenet.github.io/" target="_blank" class="project-link">Siteyi Ziyaret Et</a>
+                </div>
+            </div>
+            
+            <!-- Site 3 -->
+            <div class="project-card">
+                <img src="site3-thumbnail.png" alt="Site 3 Thumbnail" class="project-thumbnail">
+                <div class="project-info">
+                    <h3>Günlük Paragraf Çözüm Platformu</h3>
+                    <p>Her gün 24 paragraf sorusu çözmeye odaklanan interaktif bir uygulama. Kullanıcılar günlük çalışma sürelerini takip edebilir, doğru/yanlış analizlerini görebilir ve gelişimlerini adım adım izleyebilir.
+
+</p>
+                    <a href="https://paragrafrutini.github.io/paragrafrutini/" target="_blank" class="project-link">Siteyi Ziyaret Et</a>
+                </div>
+            </div>
+			
+			<div class="project-card">
+                <img src="site4-thumbnail.png" alt="Site 3 Thumbnail" class="project-thumbnail">
+                <div class="project-info">
+                    <h3>Almanca Oyunları</h3>
+<p>Almanca öğrenimini eğlenceli hale getiren, kelime bilgisini geliştiren ve tekrar kolaylığı sağlayan oyunlar içeren interaktif bir platform. Wordwall ile hazırlanan bu oyunlar sayesinde öğrenciler  öğrenme sürecine eğlenceli şekilde katılabilir.</p>
+
+                    <a href="https://linktr.ee/MohammedZiadaalmanca" target="_blank" class="project-link">Siteyi Ziyaret Et</a>
+                </div>
+            </div>
+
+            
+          
+        
+        <footer>
+            <p>© 2025 Mohammed Ziada. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Tema değiştirme işlevi
+        const themeToggle = document.querySelector('.theme-toggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            
+            if(body.classList.contains('light-theme')) {
+                themeToggle.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                    </svg>
+                    `;
+                
+                // Light tema renkleri
+                body.style.setProperty('--dark', '#f5f6fa');
+                body.style.setProperty('--light', '#2d3436');
+                body.style.setProperty('--text', '#2d3436');
+                body.style.setProperty('--card-bg', '#ffffff');
+            } else {
+                themeToggle.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                    </svg>
+                    `;
+                
+                // Dark tema renkleri
+                body.style.setProperty('--dark', '#2d3436');
+                body.style.setProperty('--light', '#f5f6fa');
+                body.style.setProperty('--text', '#dfe6e9');
+                body.style.setProperty('--card-bg', '#1e272e');
+            }
+        });
+    </script>
+</body>
+</html>
